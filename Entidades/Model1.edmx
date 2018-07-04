@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ContruccionesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ConstruccionesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Categoria">
           <Key>
             <PropertyRef Name="IdCategoria" />
@@ -140,16 +140,6 @@
           </Key>
           <Property Name="idrol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="usuarios">
           <Key>
@@ -315,7 +305,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ContruccionesModelStoreContainer">
+        <EntityContainer Name="ConstruccionesModelStoreContainer">
           <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ControlHoras" EntityType="Self.ControlHoras" Schema="dbo" store:Type="Tables" />
@@ -330,7 +320,6 @@
           <EntitySet Name="RetiroCuentaEmpleado" EntityType="Self.RetiroCuentaEmpleado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="rolAsignadoAUsuario" EntityType="Self.rolAsignadoAUsuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="roles" EntityType="Self.roles" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__permisosD__idmod__5535A963" Association="Self.FK__permisosD__idmod__5535A963">
             <End Role="modulo" EntitySet="modulo" />
@@ -389,7 +378,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ContruccionesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ConstruccionesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Categoria">
           <Key>
             <PropertyRef Name="IdCategoria" />
@@ -550,16 +539,6 @@
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="permisosDeRol" Relationship="Self.FK__permisosD__idrol__5441852A" FromRole="roles" ToRole="permisosDeRol" />
           <NavigationProperty Name="rolAsignadoAUsuario" Relationship="Self.FK__rolAsigna__idRol__5165187F" FromRole="roles" ToRole="rolAsignadoAUsuario" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="usuarios">
           <Key>
@@ -726,7 +705,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ContruccionesEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BD_ConstruccionesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categoria" EntityType="Self.Categoria" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" />
           <EntitySet Name="ControlHoras" EntityType="Self.ControlHoras" />
@@ -741,7 +720,6 @@
           <EntitySet Name="RetiroCuentaEmpleado" EntityType="Self.RetiroCuentaEmpleado" />
           <EntitySet Name="rolAsignadoAUsuario" EntityType="Self.rolAsignadoAUsuario" />
           <EntitySet Name="roles" EntityType="Self.roles" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="usuarios" EntityType="Self.usuarios" />
           <AssociationSet Name="FK_Empleado_Categoria" Association="Self.FK_Empleado_Categoria">
             <End Role="Categoria" EntitySet="Categoria" />
@@ -801,9 +779,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ContruccionesModelStoreContainer" CdmEntityContainer="ContruccionesEntities">
+        <EntityContainerMapping StorageEntityContainer="ConstruccionesModelStoreContainer" CdmEntityContainer="BD_ConstruccionesEntities">
           <EntitySetMapping Name="Categoria">
-            <EntityTypeMapping TypeName="ContruccionesModel.Categoria">
+            <EntityTypeMapping TypeName="ConstruccionesModel.Categoria">
               <MappingFragment StoreEntitySet="Categoria">
                 <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -812,7 +790,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Cliente">
-            <EntityTypeMapping TypeName="ContruccionesModel.Cliente">
+            <EntityTypeMapping TypeName="ConstruccionesModel.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
                 <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -821,7 +799,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ControlHoras">
-            <EntityTypeMapping TypeName="ContruccionesModel.ControlHoras">
+            <EntityTypeMapping TypeName="ConstruccionesModel.ControlHoras">
               <MappingFragment StoreEntitySet="ControlHoras">
                 <ScalarProperty Name="IdControl" ColumnName="IdControl" />
                 <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
@@ -838,7 +816,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CuentaEmpleado">
-            <EntityTypeMapping TypeName="ContruccionesModel.CuentaEmpleado">
+            <EntityTypeMapping TypeName="ConstruccionesModel.CuentaEmpleado">
               <MappingFragment StoreEntitySet="CuentaEmpleado">
                 <ScalarProperty Name="IdCuenta" ColumnName="IdCuenta" />
                 <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
@@ -847,7 +825,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DetalleFactura">
-            <EntityTypeMapping TypeName="ContruccionesModel.DetalleFactura">
+            <EntityTypeMapping TypeName="ConstruccionesModel.DetalleFactura">
               <MappingFragment StoreEntitySet="DetalleFactura">
                 <ScalarProperty Name="NumeroDetalle" ColumnName="NumeroDetalle" />
                 <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
@@ -858,7 +836,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Empleado">
-            <EntityTypeMapping TypeName="ContruccionesModel.Empleado">
+            <EntityTypeMapping TypeName="ConstruccionesModel.Empleado">
               <MappingFragment StoreEntitySet="Empleado">
                 <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
                 <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
@@ -871,7 +849,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Factura">
-            <EntityTypeMapping TypeName="ContruccionesModel.Factura">
+            <EntityTypeMapping TypeName="ConstruccionesModel.Factura">
               <MappingFragment StoreEntitySet="Factura">
                 <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
                 <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
@@ -882,7 +860,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FacturaIngreso">
-            <EntityTypeMapping TypeName="ContruccionesModel.FacturaIngreso">
+            <EntityTypeMapping TypeName="ConstruccionesModel.FacturaIngreso">
               <MappingFragment StoreEntitySet="FacturaIngreso">
                 <ScalarProperty Name="NumeroFacturaIngreso" ColumnName="NumeroFacturaIngreso" />
                 <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
@@ -894,7 +872,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="modulo">
-            <EntityTypeMapping TypeName="ContruccionesModel.modulo">
+            <EntityTypeMapping TypeName="ConstruccionesModel.modulo">
               <MappingFragment StoreEntitySet="modulo">
                 <ScalarProperty Name="idmodulo" ColumnName="idmodulo" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -902,7 +880,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PagoSemanal">
-            <EntityTypeMapping TypeName="ContruccionesModel.PagoSemanal">
+            <EntityTypeMapping TypeName="ConstruccionesModel.PagoSemanal">
               <MappingFragment StoreEntitySet="PagoSemanal">
                 <ScalarProperty Name="IdPago" ColumnName="IdPago" />
                 <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
@@ -913,7 +891,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="permisosDeRol">
-            <EntityTypeMapping TypeName="ContruccionesModel.permisosDeRol">
+            <EntityTypeMapping TypeName="ConstruccionesModel.permisosDeRol">
               <MappingFragment StoreEntitySet="permisosDeRol">
                 <ScalarProperty Name="idrol" ColumnName="idrol" />
                 <ScalarProperty Name="idmodulo" ColumnName="idmodulo" />
@@ -925,7 +903,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RetiroCuentaEmpleado">
-            <EntityTypeMapping TypeName="ContruccionesModel.RetiroCuentaEmpleado">
+            <EntityTypeMapping TypeName="ConstruccionesModel.RetiroCuentaEmpleado">
               <MappingFragment StoreEntitySet="RetiroCuentaEmpleado">
                 <ScalarProperty Name="IdRetiro" ColumnName="IdRetiro" />
                 <ScalarProperty Name="IdCuenta" ColumnName="IdCuenta" />
@@ -934,7 +912,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="rolAsignadoAUsuario">
-            <EntityTypeMapping TypeName="ContruccionesModel.rolAsignadoAUsuario">
+            <EntityTypeMapping TypeName="ConstruccionesModel.rolAsignadoAUsuario">
               <MappingFragment StoreEntitySet="rolAsignadoAUsuario">
                 <ScalarProperty Name="idrolAsignadoAUsuario" ColumnName="idrolAsignadoAUsuario" />
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
@@ -943,26 +921,15 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="roles">
-            <EntityTypeMapping TypeName="ContruccionesModel.roles">
+            <EntityTypeMapping TypeName="ConstruccionesModel.roles">
               <MappingFragment StoreEntitySet="roles">
                 <ScalarProperty Name="idrol" ColumnName="idrol" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="ContruccionesModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="usuarios">
-            <EntityTypeMapping TypeName="ContruccionesModel.usuarios">
+            <EntityTypeMapping TypeName="ConstruccionesModel.usuarios">
               <MappingFragment StoreEntitySet="usuarios">
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
                 <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />

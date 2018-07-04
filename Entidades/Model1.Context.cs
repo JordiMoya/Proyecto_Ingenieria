@@ -13,10 +13,10 @@ namespace Entidades
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ContruccionesEntities : DbContext
+    public partial class BD_ConstruccionesEntities : DbContext
     {
-        public ContruccionesEntities()
-            : base("name=ContruccionesEntities")
+        public BD_ConstruccionesEntities()
+            : base("name=BD_ConstruccionesEntities")
         {
         }
     
@@ -39,7 +39,6 @@ namespace Entidades
         public virtual DbSet<RetiroCuentaEmpleado> RetiroCuentaEmpleado { get; set; }
         public virtual DbSet<rolAsignadoAUsuario> rolAsignadoAUsuario { get; set; }
         public virtual DbSet<roles> roles { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<usuarios> usuarios { get; set; }
     }
 }
