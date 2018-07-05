@@ -9,6 +9,21 @@ namespace Capa_Negocio
     public class Rol
     {
         Rol_DAL rolDAL = new Rol_DAL();
+        
+        public void AgregarRol(roles rol)
+        {
+            try
+            {
+                rolDAL.AgregarRol(rol);
+            }
+            catch(Exception ex)
+            {
+
+            }
+            
+
+        }
+        
         /*
         public void Agregar(roles rol, DataGridView dtgPermisos)
         {

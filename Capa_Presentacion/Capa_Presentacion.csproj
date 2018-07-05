@@ -95,6 +95,12 @@
     <Compile Include="frmReportePagoEmpleado.Designer.cs">
       <DependentUpon>frmReportePagoEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRoles.Designer.cs">
+      <DependentUpon>frmRoles.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportePagoEmpleado.resx">
       <DependentUpon>frmReportePagoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRoles.resx">
+      <DependentUpon>frmRoles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
@@ -163,6 +172,13 @@
       <Project>{edab3eeb-ec38-453d-9547-532217be732b}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\1492759895_custom-reports.png" />
+    <Content Include="Resources\1493082856_Checkmark.png" />
+    <Content Include="Resources\1493083030_Save-as.png" />
+    <Content Include="Resources\1493083103_f-cross_256.png" />
+    <Content Include="Resources\1498019188_search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
