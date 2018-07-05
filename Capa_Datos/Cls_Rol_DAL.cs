@@ -5,17 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 
-namespace Capa_Datos
+namespace DAL
 {
-    public class Rol_DAL
+    public class Cls_Rol_DAL
     {
-        private BD_ConstruccionesEntities miContexto = new BD_ConstruccionesEntities();
+
+        private DB_BibliotecaEntities miContexto = new DB_BibliotecaEntities();
         roles rol;
 
         public void AgregarRol(roles pRol)
         {
             try
             {
+
                 miContexto.roles.Add(pRol);
                 miContexto.SaveChanges();
 
@@ -86,6 +88,6 @@ namespace Capa_Datos
             }
         }
 
-
     }
 }
+

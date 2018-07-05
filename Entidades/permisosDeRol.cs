@@ -15,13 +15,13 @@ namespace Entidades
     public partial class permisosDeRol
     {
         public int idrol { get; set; }
-        public int idmodulo { get; set; }
+        public int idventana { get; set; }
         public Nullable<int> insertar { get; set; }
         public Nullable<int> modificar { get; set; }
         public Nullable<int> eliminar { get; set; }
         public Nullable<int> consultar { get; set; }
     
-        public virtual modulo modulo { get; set; }
         public virtual roles roles { get; set; }
+        public virtual ventanas ventanas { get; set; }
     }
 }

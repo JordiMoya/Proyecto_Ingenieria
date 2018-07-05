@@ -12,15 +12,15 @@ namespace Entidades
     using System;
     using System.Collections.Generic;
     
-    public partial class modulo
+    public partial class ventanas
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public modulo()
+        public ventanas()
         {
             this.permisosDeRol = new HashSet<permisosDeRol>();
         }
     
-        public int idmodulo { get; set; }
+        public int idventana { get; set; }
         public string nombre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

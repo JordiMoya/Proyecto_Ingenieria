@@ -89,13 +89,6 @@
           <Property Name="Descripcion" Type="varchar" MaxLength="50" />
           <Property Name="Total" Type="numeric" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
-        <EntityType Name="modulo">
-          <Key>
-            <PropertyRef Name="idmodulo" />
-          </Key>
-          <Property Name="idmodulo" Type="int" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="50" />
-        </EntityType>
         <EntityType Name="PagoSemanal">
           <Key>
             <PropertyRef Name="IdPago" />
@@ -109,10 +102,10 @@
         <EntityType Name="permisosDeRol">
           <Key>
             <PropertyRef Name="idrol" />
-            <PropertyRef Name="idmodulo" />
+            <PropertyRef Name="idventana" />
           </Key>
           <Property Name="idrol" Type="int" Nullable="false" />
-          <Property Name="idmodulo" Type="int" Nullable="false" />
+          <Property Name="idventana" Type="int" Nullable="false" />
           <Property Name="insertar" Type="int" />
           <Property Name="modificar" Type="int" />
           <Property Name="eliminar" Type="int" />
@@ -149,18 +142,13 @@
           <Property Name="nombreUsuario" Type="varchar" MaxLength="30" />
           <Property Name="contrasenna" Type="varchar(max)" />
         </EntityType>
-        <Association Name="FK__permisosD__idmod__5535A963">
-          <End Role="modulo" Type="Self.modulo" Multiplicity="1" />
-          <End Role="permisosDeRol" Type="Self.permisosDeRol" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="modulo">
-              <PropertyRef Name="idmodulo" />
-            </Principal>
-            <Dependent Role="permisosDeRol">
-              <PropertyRef Name="idmodulo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityType Name="ventanas">
+          <Key>
+            <PropertyRef Name="idventana" />
+          </Key>
+          <Property Name="idventana" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+        </EntityType>
         <Association Name="FK__permisosD__idrol__5441852A">
           <End Role="roles" Type="Self.roles" Multiplicity="1" />
           <End Role="permisosDeRol" Type="Self.permisosDeRol" Multiplicity="*" />
@@ -170,6 +158,18 @@
             </Principal>
             <Dependent Role="permisosDeRol">
               <PropertyRef Name="idrol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__permisosD__idven__5535A963">
+          <End Role="ventanas" Type="Self.ventanas" Multiplicity="1" />
+          <End Role="permisosDeRol" Type="Self.permisosDeRol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ventanas">
+              <PropertyRef Name="idventana" />
+            </Principal>
+            <Dependent Role="permisosDeRol">
+              <PropertyRef Name="idventana" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -314,19 +314,19 @@
           <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FacturaIngreso" EntityType="Self.FacturaIngreso" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="modulo" EntityType="Self.modulo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PagoSemanal" EntityType="Self.PagoSemanal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="permisosDeRol" EntityType="Self.permisosDeRol" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RetiroCuentaEmpleado" EntityType="Self.RetiroCuentaEmpleado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="rolAsignadoAUsuario" EntityType="Self.rolAsignadoAUsuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="roles" EntityType="Self.roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__permisosD__idmod__5535A963" Association="Self.FK__permisosD__idmod__5535A963">
-            <End Role="modulo" EntitySet="modulo" />
-            <End Role="permisosDeRol" EntitySet="permisosDeRol" />
-          </AssociationSet>
+          <EntitySet Name="ventanas" EntityType="Self.ventanas" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__permisosD__idrol__5441852A" Association="Self.FK__permisosD__idrol__5441852A">
             <End Role="roles" EntitySet="roles" />
+            <End Role="permisosDeRol" EntitySet="permisosDeRol" />
+          </AssociationSet>
+          <AssociationSet Name="FK__permisosD__idven__5535A963" Association="Self.FK__permisosD__idven__5535A963">
+            <End Role="ventanas" EntitySet="ventanas" />
             <End Role="permisosDeRol" EntitySet="permisosDeRol" />
           </AssociationSet>
           <AssociationSet Name="FK__rolAsigna__idRol__5165187F" Association="Self.FK__rolAsigna__idRol__5165187F">
@@ -479,14 +479,6 @@
           <Property Name="Total" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <NavigationProperty Name="Factura" Relationship="Self.FK_FacturaIngreso_Factura" FromRole="FacturaIngreso" ToRole="Factura" />
         </EntityType>
-        <EntityType Name="modulo">
-          <Key>
-            <PropertyRef Name="idmodulo" />
-          </Key>
-          <Property Name="idmodulo" Type="Int32" Nullable="false" />
-          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="permisosDeRol" Relationship="Self.FK__permisosD__idmod__5535A963" FromRole="modulo" ToRole="permisosDeRol" />
-        </EntityType>
         <EntityType Name="PagoSemanal">
           <Key>
             <PropertyRef Name="IdPago" />
@@ -501,16 +493,16 @@
         <EntityType Name="permisosDeRol">
           <Key>
             <PropertyRef Name="idrol" />
-            <PropertyRef Name="idmodulo" />
+            <PropertyRef Name="idventana" />
           </Key>
           <Property Name="idrol" Type="Int32" Nullable="false" />
-          <Property Name="idmodulo" Type="Int32" Nullable="false" />
+          <Property Name="idventana" Type="Int32" Nullable="false" />
           <Property Name="insertar" Type="Int32" />
           <Property Name="modificar" Type="Int32" />
           <Property Name="eliminar" Type="Int32" />
           <Property Name="consultar" Type="Int32" />
-          <NavigationProperty Name="modulo" Relationship="Self.FK__permisosD__idmod__5535A963" FromRole="permisosDeRol" ToRole="modulo" />
           <NavigationProperty Name="roles" Relationship="Self.FK__permisosD__idrol__5441852A" FromRole="permisosDeRol" ToRole="roles" />
+          <NavigationProperty Name="ventanas" Relationship="Self.FK__permisosD__idven__5535A963" FromRole="permisosDeRol" ToRole="ventanas" />
         </EntityType>
         <EntityType Name="RetiroCuentaEmpleado">
           <Key>
@@ -548,6 +540,14 @@
           <Property Name="nombreUsuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="contrasenna" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="rolAsignadoAUsuario" Relationship="Self.FK__rolAsigna__idUsu__52593CB8" FromRole="usuarios" ToRole="rolAsignadoAUsuario" />
+        </EntityType>
+        <EntityType Name="ventanas">
+          <Key>
+            <PropertyRef Name="idventana" />
+          </Key>
+          <Property Name="idventana" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="permisosDeRol" Relationship="Self.FK__permisosD__idven__5535A963" FromRole="ventanas" ToRole="permisosDeRol" />
         </EntityType>
         <Association Name="FK_Empleado_Categoria">
           <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
@@ -657,18 +657,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__permisosD__idmod__5535A963">
-          <End Role="modulo" Type="Self.modulo" Multiplicity="1" />
-          <End Role="permisosDeRol" Type="Self.permisosDeRol" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="modulo">
-              <PropertyRef Name="idmodulo" />
-            </Principal>
-            <Dependent Role="permisosDeRol">
-              <PropertyRef Name="idmodulo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__permisosD__idrol__5441852A">
           <End Role="roles" Type="Self.roles" Multiplicity="1" />
           <End Role="permisosDeRol" Type="Self.permisosDeRol" Multiplicity="*" />
@@ -678,6 +666,18 @@
             </Principal>
             <Dependent Role="permisosDeRol">
               <PropertyRef Name="idrol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__permisosD__idven__5535A963">
+          <End Role="ventanas" Type="Self.ventanas" Multiplicity="1" />
+          <End Role="permisosDeRol" Type="Self.permisosDeRol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ventanas">
+              <PropertyRef Name="idventana" />
+            </Principal>
+            <Dependent Role="permisosDeRol">
+              <PropertyRef Name="idventana" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -705,7 +705,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BD_ConstruccionesEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DB_ConstruccionesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categoria" EntityType="Self.Categoria" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" />
           <EntitySet Name="ControlHoras" EntityType="Self.ControlHoras" />
@@ -714,13 +714,13 @@
           <EntitySet Name="Empleado" EntityType="Self.Empleado" />
           <EntitySet Name="Factura" EntityType="Self.Factura" />
           <EntitySet Name="FacturaIngreso" EntityType="Self.FacturaIngreso" />
-          <EntitySet Name="modulo" EntityType="Self.modulo" />
           <EntitySet Name="PagoSemanal" EntityType="Self.PagoSemanal" />
           <EntitySet Name="permisosDeRol" EntityType="Self.permisosDeRol" />
           <EntitySet Name="RetiroCuentaEmpleado" EntityType="Self.RetiroCuentaEmpleado" />
           <EntitySet Name="rolAsignadoAUsuario" EntityType="Self.rolAsignadoAUsuario" />
           <EntitySet Name="roles" EntityType="Self.roles" />
           <EntitySet Name="usuarios" EntityType="Self.usuarios" />
+          <EntitySet Name="ventanas" EntityType="Self.ventanas" />
           <AssociationSet Name="FK_Empleado_Categoria" Association="Self.FK_Empleado_Categoria">
             <End Role="Categoria" EntitySet="Categoria" />
             <End Role="Empleado" EntitySet="Empleado" />
@@ -757,12 +757,12 @@
             <End Role="Factura" EntitySet="Factura" />
             <End Role="FacturaIngreso" EntitySet="FacturaIngreso" />
           </AssociationSet>
-          <AssociationSet Name="FK__permisosD__idmod__5535A963" Association="Self.FK__permisosD__idmod__5535A963">
-            <End Role="modulo" EntitySet="modulo" />
-            <End Role="permisosDeRol" EntitySet="permisosDeRol" />
-          </AssociationSet>
           <AssociationSet Name="FK__permisosD__idrol__5441852A" Association="Self.FK__permisosD__idrol__5441852A">
             <End Role="roles" EntitySet="roles" />
+            <End Role="permisosDeRol" EntitySet="permisosDeRol" />
+          </AssociationSet>
+          <AssociationSet Name="FK__permisosD__idven__5535A963" Association="Self.FK__permisosD__idven__5535A963">
+            <End Role="ventanas" EntitySet="ventanas" />
             <End Role="permisosDeRol" EntitySet="permisosDeRol" />
           </AssociationSet>
           <AssociationSet Name="FK__rolAsigna__idRol__5165187F" Association="Self.FK__rolAsigna__idRol__5165187F">
@@ -779,7 +779,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ConstruccionesModelStoreContainer" CdmEntityContainer="BD_ConstruccionesEntities">
+        <EntityContainerMapping StorageEntityContainer="ConstruccionesModelStoreContainer" CdmEntityContainer="DB_ConstruccionesEntities">
           <EntitySetMapping Name="Categoria">
             <EntityTypeMapping TypeName="ConstruccionesModel.Categoria">
               <MappingFragment StoreEntitySet="Categoria">
@@ -871,14 +871,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="modulo">
-            <EntityTypeMapping TypeName="ConstruccionesModel.modulo">
-              <MappingFragment StoreEntitySet="modulo">
-                <ScalarProperty Name="idmodulo" ColumnName="idmodulo" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="PagoSemanal">
             <EntityTypeMapping TypeName="ConstruccionesModel.PagoSemanal">
               <MappingFragment StoreEntitySet="PagoSemanal">
@@ -894,7 +886,7 @@
             <EntityTypeMapping TypeName="ConstruccionesModel.permisosDeRol">
               <MappingFragment StoreEntitySet="permisosDeRol">
                 <ScalarProperty Name="idrol" ColumnName="idrol" />
-                <ScalarProperty Name="idmodulo" ColumnName="idmodulo" />
+                <ScalarProperty Name="idventana" ColumnName="idventana" />
                 <ScalarProperty Name="insertar" ColumnName="insertar" />
                 <ScalarProperty Name="modificar" ColumnName="modificar" />
                 <ScalarProperty Name="eliminar" ColumnName="eliminar" />
@@ -934,6 +926,14 @@
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
                 <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
                 <ScalarProperty Name="contrasenna" ColumnName="contrasenna" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ventanas">
+            <EntityTypeMapping TypeName="ConstruccionesModel.ventanas">
+              <MappingFragment StoreEntitySet="ventanas">
+                <ScalarProperty Name="idventana" ColumnName="idventana" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

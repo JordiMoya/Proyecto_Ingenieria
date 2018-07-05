@@ -1,30 +1,19 @@
-﻿using Capa_Datos;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DAL;
 using Entidades;
-using System;
 using System.Transactions;
 using System.Windows.Forms;
 
-namespace Capa_Negocio
+namespace Capa_Logica_Negocio
 {
-    public class Rol
+    public class Cls_Rol
     {
-        Rol_DAL rolDAL = new Rol_DAL();
-        
-        public void AgregarRol(roles rol)
-        {
-            try
-            {
-                rolDAL.AgregarRol(rol);
-            }
-            catch(Exception ex)
-            {
+        Cls_Rol_DAL rolDAL = new Cls_Rol_DAL();
 
-            }
-            
-
-        }
-        
-        /*
         public void Agregar(roles rol, DataGridView dtgPermisos)
         {
             using (TransactionScope scope = new TransactionScope())
@@ -40,7 +29,7 @@ namespace Capa_Negocio
                         permisosDeRol permisosRol = new permisosDeRol
                         {
                             idrol = rol.idrol,
-                            modulo = Convert.ToInt32(dtgPermisos.Rows[i].Cells[0].Value),
+                            idventana = Convert.ToInt32(dtgPermisos.Rows[i].Cells[0].Value),
                             consultar = Convert.ToInt32(dtgPermisos.Rows[i].Cells[2].Value),
                             insertar = Convert.ToInt32(dtgPermisos.Rows[i].Cells[3].Value),
                             modificar = Convert.ToInt32(dtgPermisos.Rows[i].Cells[4].Value),
@@ -59,7 +48,7 @@ namespace Capa_Negocio
                     throw ex;
                 }
             }
-
+                
         }
 
         public roles Consultar(int IDRol)
@@ -89,7 +78,7 @@ namespace Capa_Negocio
                         permisosDeRol permisosRol = new permisosDeRol
                         {
                             idrol = rol.idrol,
-                            idmodulo = Convert.ToInt32(dtgPermisos.Rows[i].Cells[0].Value),
+                            idventana = Convert.ToInt32(dtgPermisos.Rows[i].Cells[0].Value),
                             consultar = Convert.ToInt32(dtgPermisos.Rows[i].Cells[2].Value),
                             insertar = Convert.ToInt32(dtgPermisos.Rows[i].Cells[3].Value),
                             modificar = Convert.ToInt32(dtgPermisos.Rows[i].Cells[4].Value),
@@ -130,20 +119,19 @@ namespace Capa_Negocio
                     throw ex;
                 }
             }
-
+                
         }
 
         public Array ListaRoles()
         {
             try
             {
-                return rolDAL.ListaRoles();
+               return rolDAL.ListaRoles();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        */
     }
 }

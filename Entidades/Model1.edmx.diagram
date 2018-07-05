@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="00593aef3e664bef92eb3e3c49add9cc" Name="Diagram1">
+      <Diagram DiagramId="0ad81dc45bcc453aa68967f65d16c1f9" Name="Diagram1">
         <EntityTypeShape EntityType="ConstruccionesModel.Categoria" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="ConstruccionesModel.Cliente" Width="1.5" PointX="7.75" PointY="11.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ConstruccionesModel.ControlHoras" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
@@ -13,13 +13,13 @@
         <EntityTypeShape EntityType="ConstruccionesModel.Empleado" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ConstruccionesModel.Factura" Width="1.5" PointX="10" PointY="11.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ConstruccionesModel.FacturaIngreso" Width="1.5" PointX="12.25" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConstruccionesModel.modulo" Width="1.5" PointX="9.75" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="ConstruccionesModel.PagoSemanal" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ConstruccionesModel.permisosDeRol" Width="1.5" PointX="12" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ConstruccionesModel.RetiroCuentaEmpleado" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ConstruccionesModel.rolAsignadoAUsuario" Width="1.5" PointX="12" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConstruccionesModel.roles" Width="1.5" PointX="9.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConstruccionesModel.usuarios" Width="1.5" PointX="9.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConstruccionesModel.roles" Width="1.5" PointX="10" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConstruccionesModel.usuarios" Width="1.5" PointX="14" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConstruccionesModel.ventanas" Width="1.5" PointX="9.75" PointY="7" IsExpanded="true" />
         <AssociationConnector Association="ConstruccionesModel.FK_Empleado_Categoria" ManuallyRouted="false" />
         <AssociationConnector Association="ConstruccionesModel.FK_Factura_Cliente" ManuallyRouted="false" />
         <AssociationConnector Association="ConstruccionesModel.FK_ControlHoras_Empleado" ManuallyRouted="false" />
@@ -29,8 +29,8 @@
         <AssociationConnector Association="ConstruccionesModel.FK_DetalleFactura_Factura" ManuallyRouted="false" />
         <AssociationConnector Association="ConstruccionesModel.FK_PagoSemanal_Empleado" ManuallyRouted="false" />
         <AssociationConnector Association="ConstruccionesModel.FK_FacturaIngreso_Factura" ManuallyRouted="false" />
-        <AssociationConnector Association="ConstruccionesModel.FK__permisosD__idmod__5535A963" ManuallyRouted="false" />
         <AssociationConnector Association="ConstruccionesModel.FK__permisosD__idrol__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="ConstruccionesModel.FK__permisosD__idven__5535A963" ManuallyRouted="false" />
         <AssociationConnector Association="ConstruccionesModel.FK__rolAsigna__idRol__5165187F" ManuallyRouted="false" />
         <AssociationConnector Association="ConstruccionesModel.FK__rolAsigna__idUsu__52593CB8" ManuallyRouted="false" />
       </Diagram>
