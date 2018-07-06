@@ -16,5 +16,17 @@ namespace Capa_Presentacion
         {
             InitializeComponent();
         }
+
+       
+
+        private void frmControlHoras_Load(object sender, EventArgs e)
+        {
+            cbxDia.Items.Add("Lunes");
+            cbxDia.Items.Add("Martes");
+            cbxDia.Items.Add("Miércoles");
+            cbxDia.Items.Add("Jueves");
+            cbxDia.Items.Add("Viernes");
+            cbxDia.Items.Add("Sábado");
+        }
     }
 }
