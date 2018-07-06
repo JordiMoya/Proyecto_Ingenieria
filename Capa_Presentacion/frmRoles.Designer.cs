@@ -77,6 +77,7 @@
             this.dtgPermisos.Name = "dtgPermisos";
             this.dtgPermisos.Size = new System.Drawing.Size(689, 132);
             this.dtgPermisos.TabIndex = 9;
+            this.dtgPermisos.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgPermisos_RowHeaderMouseDoubleClick);
             // 
             // Column1
             // 
@@ -148,6 +149,7 @@
             this.checkEliminar.TabIndex = 6;
             this.checkEliminar.Text = "Eliminar";
             this.checkEliminar.UseVisualStyleBackColor = true;
+            this.checkEliminar.CheckedChanged += new System.EventHandler(this.checkEliminar_CheckedChanged);
             // 
             // checkModificar
             // 
@@ -158,6 +160,7 @@
             this.checkModificar.TabIndex = 5;
             this.checkModificar.Text = "Modificar";
             this.checkModificar.UseVisualStyleBackColor = true;
+            this.checkModificar.CheckedChanged += new System.EventHandler(this.checkModificar_CheckedChanged);
             // 
             // checkInsertar
             // 
@@ -168,6 +171,7 @@
             this.checkInsertar.TabIndex = 4;
             this.checkInsertar.Text = "Insertar";
             this.checkInsertar.UseVisualStyleBackColor = true;
+            this.checkInsertar.CheckedChanged += new System.EventHandler(this.checkInsertar_CheckedChanged);
             // 
             // checkConsultar
             // 
@@ -178,6 +182,7 @@
             this.checkConsultar.TabIndex = 3;
             this.checkConsultar.Text = "Consultar";
             this.checkConsultar.UseVisualStyleBackColor = true;
+            this.checkConsultar.CheckedChanged += new System.EventHandler(this.checkConsultar_CheckedChanged);
             // 
             // label3
             // 
@@ -268,6 +273,7 @@
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnEliminar
             // 
@@ -282,6 +288,7 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -296,6 +303,7 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -310,6 +318,7 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // frmRoles
             // 
@@ -324,6 +333,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmRoles";
             this.Text = "Mantenimiento roles";
+            this.Load += new System.EventHandler(this.frmRoles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgPermisos)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

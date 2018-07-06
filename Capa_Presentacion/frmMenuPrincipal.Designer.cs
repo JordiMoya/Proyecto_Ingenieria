@@ -82,19 +82,19 @@
             // categoríaToolStripMenuItem
             // 
             this.categoríaToolStripMenuItem.Name = "categoríaToolStripMenuItem";
-            this.categoríaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.categoríaToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.categoríaToolStripMenuItem.Text = "Categoría";
             // 
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             // 
             // empleadoToolStripMenuItem
             // 
             this.empleadoToolStripMenuItem.Name = "empleadoToolStripMenuItem";
-            this.empleadoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.empleadoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.empleadoToolStripMenuItem.Text = "Empleado";
             // 
             // controlLaboralToolStripMenuItem
@@ -162,6 +162,7 @@
             this.rolesToolStripMenuItem.Name = "rolesToolStripMenuItem";
             this.rolesToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.rolesToolStripMenuItem.Text = "Roles";
+            this.rolesToolStripMenuItem.Click += new System.EventHandler(this.rolesToolStripMenuItem_Click);
             // 
             // permisosDeRolesToolStripMenuItem
             // 

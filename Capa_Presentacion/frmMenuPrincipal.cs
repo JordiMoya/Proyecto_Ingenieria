@@ -22,5 +22,11 @@ namespace Capa_Presentacion
             frmUsuarios frmUsuarios = new frmUsuarios();
             frmUsuarios.ShowDialog();
         }
+
+        private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRoles frmRoles = new frmRoles();
+            frmRoles.ShowDialog();
+        }
     }
 }

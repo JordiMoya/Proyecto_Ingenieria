@@ -12,7 +12,7 @@ namespace Capa_Logica_Negocio
     {
         Cls_Ventanas_DAL ventanaDAL = new Cls_Ventanas_DAL();
 
-        public Array ListaLibros()
+        public Array ListaVentanas()
         {
             try
             {
