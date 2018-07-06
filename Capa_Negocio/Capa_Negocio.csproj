@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cls_Factura.cs" />
     <Compile Include="Cls_PermisosRol.cs" />
     <Compile Include="Cls_Rol.cs" />
     <Compile Include="Cls_RolAsignado.cs" />
