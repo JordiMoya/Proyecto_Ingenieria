@@ -23,10 +23,12 @@ namespace Capa_Presentacion
 
         public void EstadoInicial()
         {
+            txtTotalFactura.Text = ""+0;
             txtNumCasa.Text = "";
             txtMonto.Text = "";
             rtxtDescripcion.Text = "";
             txtSemana.Text = "";
+            txtFactura.Text = "";
 
             int numFila = dtgDetalle.RowCount - 1;
             for (int i = 0; i < numFila; i++)
@@ -55,7 +57,8 @@ namespace Capa_Presentacion
             else
             {
                 dtgDetalle.Rows.Add(numFila+1, txtNumCasa.Text, rtxtDescripcion.Text, txtMonto.Text);
-
+                int totalActual = Convert.ToInt32(txtTotalFactura.Text);
+                txtTotalFactura.Text = ""+(Convert.ToInt32(txtMonto.Text) + totalActual);
             }
         }
 
@@ -80,6 +83,26 @@ namespace Capa_Presentacion
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void frmFacturaCobro_Load(object sender, EventArgs e)
+        {
+            EstadoInicial();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

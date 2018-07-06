@@ -83,6 +83,12 @@
     <Compile Include="frmFacturaCobro.Designer.cs">
       <DependentUpon>frmFacturaCobro.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFacturaIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacturaIngreso.designer.cs">
+      <DependentUpon>frmFacturaIngreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,12 @@
     </Compile>
     <Compile Include="frmMenuPrincipal.Designer.cs">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPagoSemanal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPagoSemanal.designer.cs">
+      <DependentUpon>frmPagoSemanal.cs</DependentUpon>
     </Compile>
     <Compile Include="frmReportePagoEmpleado.cs">
       <SubType>Form</SubType>
@@ -127,11 +139,17 @@
     <EmbeddedResource Include="frmFacturaCobro.resx">
       <DependentUpon>frmFacturaCobro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFacturaIngreso.resx">
+      <DependentUpon>frmFacturaIngreso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPagoSemanal.resx">
+      <DependentUpon>frmPagoSemanal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportePagoEmpleado.resx">
       <DependentUpon>frmReportePagoEmpleado.cs</DependentUpon>
