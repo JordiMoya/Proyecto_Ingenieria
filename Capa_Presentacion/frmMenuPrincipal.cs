@@ -34,5 +34,11 @@ namespace Capa_Presentacion
             frmFacturaCobro frmFacturaCobro = new frmFacturaCobro();
             frmFacturaCobro.ShowDialog();
         }
+
+        private void ingresosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFacturaIngreso frmFacturaIngreso = new frmFacturaIngreso();
+            frmFacturaIngreso.ShowDialog();
+        }
     }
 }
