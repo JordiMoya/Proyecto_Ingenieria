@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cls_DetalleFactura_DAL.cs" />
+    <Compile Include="Cls_FacturaIngreso_DAL.cs" />
     <Compile Include="Cls_Factura_DAL.cs" />
     <Compile Include="Cls_PermisosRol_DAL.cs" />
     <Compile Include="Cls_RolAsignado_DAL.cs" />

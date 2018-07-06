@@ -74,7 +74,11 @@
     <Compile Include="frmControlHoras.cs">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="frmControlHoras.Designer.cs">
+=======
+    <Compile Include="frmControlHoras.designer.cs">
+>>>>>>> 2c1b62854e93561d0b513e4c470906f84ef4e7ff
       <DependentUpon>frmControlHoras.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEmpleado.cs">
