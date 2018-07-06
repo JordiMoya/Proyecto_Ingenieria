@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Capa_Datos
 {
-    public class Cls_DetalleFactura
+    public class Cls_DetalleFactura_DAL
     {
         private DB_ConstruccionesEntities miContexto = new DB_ConstruccionesEntities();
         DetalleFactura detalle; 
