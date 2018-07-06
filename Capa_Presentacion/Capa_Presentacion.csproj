@@ -83,15 +83,6 @@
     <Compile Include="frmFacturaCobro.Designer.cs">
       <DependentUpon>frmFacturaCobro.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
-    <Compile Include="frmFacturaIngreso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmFacturaIngreso.Designer.cs">
-      <DependentUpon>frmFacturaIngreso.cs</DependentUpon>
-    </Compile>
->>>>>>> 43feb9ce56869c6ec26431e257367cbb5b1d1c4a
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,12 +127,6 @@
     <EmbeddedResource Include="frmFacturaCobro.resx">
       <DependentUpon>frmFacturaCobro.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-=======
-    <EmbeddedResource Include="frmFacturaIngreso.resx">
-      <DependentUpon>frmFacturaIngreso.cs</DependentUpon>
-    </EmbeddedResource>
->>>>>>> 43feb9ce56869c6ec26431e257367cbb5b1d1c4a
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
