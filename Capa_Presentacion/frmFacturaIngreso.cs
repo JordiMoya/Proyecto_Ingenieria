@@ -1,6 +1,4 @@
-﻿using Capa_Negocio;
-using Entidades;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +19,7 @@ namespace Capa_Presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             try
             {
                 FacturaIngreso facturaIngreso = new FacturaIngreso
@@ -90,6 +89,9 @@ namespace Capa_Presentacion
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+=======
+            //esto es una prueba
+>>>>>>> parent of 536294d... Merge branch 'master' of https://github.com/JordiMoya/Proyecto_Ingenieria
         }
     }
 }
