@@ -16,5 +16,11 @@ namespace Capa_Presentacion
         {
             InitializeComponent();
         }
+
+        private void nuevoUsusarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuarios frmUsuarios = new frmUsuarios();
+            frmUsuarios.ShowDialog();
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuarios));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -61,6 +62,7 @@
             // 
             this.btnConsultar.BackColor = System.Drawing.Color.Azure;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnConsultar.Image = global::Capa_Presentacion.Properties.Resources._1498019188_search;
             this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConsultar.Location = new System.Drawing.Point(264, 19);
             this.btnConsultar.Name = "btnConsultar";
@@ -69,11 +71,13 @@
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Snow;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminar.Image = global::Capa_Presentacion.Properties.Resources._1493083103_f_cross_256;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.Location = new System.Drawing.Point(183, 19);
             this.btnEliminar.Name = "btnEliminar";
@@ -82,11 +86,13 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.Color.PapayaWhip;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModificar.Image = global::Capa_Presentacion.Properties.Resources._1492759895_custom_reports;
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModificar.Location = new System.Drawing.Point(102, 19);
             this.btnModificar.Name = "btnModificar";
@@ -95,11 +101,13 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.Honeydew;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregar.Image = global::Capa_Presentacion.Properties.Resources._1493083030_Save_as;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.Location = new System.Drawing.Point(21, 19);
             this.btnAgregar.Name = "btnAgregar";
@@ -108,6 +116,7 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // groupBox1
             // 
@@ -183,8 +192,9 @@
             this.ClientSize = new System.Drawing.Size(453, 265);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmUsuarios";
-            this.Text = "frmUsuarios";
+            this.Text = "Mantenimiento Usuarios";
             this.groupBox4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

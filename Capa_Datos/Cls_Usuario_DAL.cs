@@ -11,14 +11,14 @@ namespace DAL
     public class Cls_Usuario_DAL
     {
 
-        private DB_BibliotecaEntities miContexto = new DB_BibliotecaEntities();
+        private DB_ConstruccionesEntities miContexto = new DB_ConstruccionesEntities();
         usuarios usuario;
 
         public void AgregarUsuario(usuarios usuario)
         {
             try
             {
-                using (DB_BibliotecaEntities contexto = new DB_BibliotecaEntities())
+                using (DB_ConstruccionesEntities contexto = new DB_ConstruccionesEntities())
                 {
                     contexto.usuarios.Add(usuario);
                     contexto.SaveChanges();

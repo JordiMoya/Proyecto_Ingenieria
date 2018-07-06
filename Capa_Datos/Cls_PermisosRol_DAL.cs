@@ -10,7 +10,7 @@ namespace DAL
     public class Cls_PermisosRol_DAL
     {
 
-        private DB_BibliotecaEntities miContexto = new DB_BibliotecaEntities();
+        private DB_ConstruccionesEntities miContexto = new DB_ConstruccionesEntities();
         permisosDeRol permisosRol;
 
         public void AgregarPermisosRol(permisosDeRol pPermisosRol)

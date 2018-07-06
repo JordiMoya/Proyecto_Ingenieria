@@ -10,7 +10,7 @@ namespace DAL
 {
     public class Cls_Ventanas_DAL
     {
-        private DB_BibliotecaEntities miContexto = new DB_BibliotecaEntities();
+        private DB_ConstruccionesEntities miContexto = new DB_ConstruccionesEntities();
         public Array ListaVentanas()
         {
             try
@@ -50,7 +50,7 @@ namespace DAL
         {
             try
             {
-                using (DB_BibliotecaEntities contexto = new DB_BibliotecaEntities())
+                using (DB_ConstruccionesEntities contexto = new DB_ConstruccionesEntities())
                 {
                     contexto.ventanas.Add(ventanas);
                     contexto.SaveChanges();

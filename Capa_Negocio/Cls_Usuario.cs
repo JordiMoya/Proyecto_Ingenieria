@@ -112,28 +112,6 @@ namespace Capa_Logica_Negocio
                         }
                     }
 
-                    if (vPermisos)
-                    {
-                        //Agregar permisos
-                        int numFila = dtgPermisos.RowCount - 1;
-                        for (int i = 0; i < numFila; i++)
-                        {
-
-                            permisosAUsuarios permisosUsuario = new permisosAUsuarios
-                            {
-                                idusuario = usuario.idUsuario,
-                                idventana = Convert.ToInt32(dtgPermisos.Rows[i].Cells[0].Value),
-                                consultar = Convert.ToInt32(dtgPermisos.Rows[i].Cells[2].Value),
-                                insertar = Convert.ToInt32(dtgPermisos.Rows[i].Cells[3].Value),
-                                modificar = Convert.ToInt32(dtgPermisos.Rows[i].Cells[4].Value),
-                                eliminar = Convert.ToInt32(dtgPermisos.Rows[i].Cells[5].Value)
-                            };
-
-                            new Cls_PermisosUsuarios().Agregar(permisosUsuario);
-
-                        }
-                    }
-
                     scope.Complete();
                     
                 }

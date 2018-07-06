@@ -9,7 +9,7 @@ namespace DAL
 {
     public class Cls_RolAsignado_DAL
     {
-        private DB_BibliotecaEntities miContexto = new DB_BibliotecaEntities();
+        private DB_ConstruccionesEntities miContexto = new DB_ConstruccionesEntities();
         rolAsignadoAUsuario rolAsignado;
 
         public void Agregar(rolAsignadoAUsuario pRolAsignado)

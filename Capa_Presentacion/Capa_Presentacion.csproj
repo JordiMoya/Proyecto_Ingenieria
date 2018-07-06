@@ -179,6 +179,7 @@
     <Content Include="Resources\1493083030_Save-as.png" />
     <Content Include="Resources\1493083103_f-cross_256.png" />
     <Content Include="Resources\1498019188_search.png" />
+    <Content Include="Resources\if_group2_309041.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

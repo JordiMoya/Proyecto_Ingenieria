@@ -47,8 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cls_PermisosRol_DAL.cs" />
+    <Compile Include="Cls_RolAsignado_DAL.cs" />
+    <Compile Include="Cls_Rol_DAL.cs" />
+    <Compile Include="Cls_Usuario_DAL.cs" />
+    <Compile Include="Cls_Ventanas_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rol_DAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
