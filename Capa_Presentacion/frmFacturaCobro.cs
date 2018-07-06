@@ -102,7 +102,24 @@ namespace Capa_Presentacion
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                Factura factura = new Cls_Factura().Consultar(Convert.ToInt32(txtFactura.Text));
+                txtSemana.Text = ""+factura.Semana;
+                txtTotalFactura.Text = "" + factura.Total;
+                cbxIdCliente.Text = "" + factura.IdCliente;
+
+
+                new Cls_DetalleFactura_DAL().ListarDetalle(Convert.ToInt32(txtFactura.Text), dtgDetalle);
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
