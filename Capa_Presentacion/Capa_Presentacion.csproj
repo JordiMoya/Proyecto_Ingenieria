@@ -71,6 +71,12 @@
     <Compile Include="frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmControlHoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmControlHoras.Designer.cs">
+      <DependentUpon>frmControlHoras.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,7 +92,7 @@
     <Compile Include="frmFacturaIngreso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFacturaIngreso.designer.cs">
+    <Compile Include="frmFacturaIngreso.Designer.cs">
       <DependentUpon>frmFacturaIngreso.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
@@ -104,7 +110,7 @@
     <Compile Include="frmPagoSemanal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPagoSemanal.designer.cs">
+    <Compile Include="frmPagoSemanal.Designer.cs">
       <DependentUpon>frmPagoSemanal.cs</DependentUpon>
     </Compile>
     <Compile Include="frmReportePagoEmpleado.cs">
@@ -112,6 +118,12 @@
     </Compile>
     <Compile Include="frmReportePagoEmpleado.Designer.cs">
       <DependentUpon>frmReportePagoEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRetiroCuentaEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRetiroCuentaEmpleado.Designer.cs">
+      <DependentUpon>frmRetiroCuentaEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRoles.cs">
       <SubType>Form</SubType>
@@ -133,6 +145,9 @@
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmControlHoras.resx">
+      <DependentUpon>frmControlHoras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmpleado.resx">
       <DependentUpon>frmEmpleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportePagoEmpleado.resx">
       <DependentUpon>frmReportePagoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRetiroCuentaEmpleado.resx">
+      <DependentUpon>frmRetiroCuentaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRoles.resx">
       <DependentUpon>frmRoles.cs</DependentUpon>
