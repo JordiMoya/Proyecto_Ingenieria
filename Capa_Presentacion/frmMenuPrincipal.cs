@@ -28,5 +28,11 @@ namespace Capa_Presentacion
             frmRoles frmRoles = new frmRoles();
             frmRoles.ShowDialog();
         }
+
+        private void cobrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFacturaCobro frmFacturaCobro = new frmFacturaCobro();
+            frmFacturaCobro.ShowDialog();
+        }
     }
 }
